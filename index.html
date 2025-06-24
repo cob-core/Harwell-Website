@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haswell - A Pixel Strategy Game</title>
+    <!-- Google Fonts for Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* All CSS is now directly embedded for compatibility with the environment */
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0d0d; /* Dark background */
+            color: #e0e0e0; /* Light text color */
+            overflow-x: hidden; /* Prevent horizontal scroll due to dynamic elements */
+        }
+        .hero-background {
+            /* background-image: url('mainmenubg.jpg'); Removed for dynamic background */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for better text readability */
+        }
+        .section-gradient {
+            background: linear-gradient(to bottom, #1a1a1a, #0d0d0d);
+        }
+        #starCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Ensure canvas is behind content */
+        }
+        /* Custom font-face for Pixellari */
+        @font-face {
+            font-family: 'Pixellari';
+            src: url('Pixellari.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        /* Custom style for Haswell title font */
+        .font-pixel {
+            font-family: 'Pixellari', 'Press Start 2P', cursive; /* Fallback to Press Start 2P and cursive */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center text-center text-white hero-background">
+        <!-- Canvas for dynamic stars -->
+        <canvas id="starCanvas"></canvas>
+        <div class="absolute inset-0 overlay"></div>
+        <div class="relative z-10 p-4 sm:p-8 md:p-12 max-w-4xl mx-auto">
+
+            <h1 class="text-6xl sm:text-7xl md:text-8xl font-bold mb-4 rounded-lg bg-red-800 bg-opacity-70 p-4 font-pixel">
+                HASWELL
+            </h1>
+            <p class="text-lg sm:text-xl md:text-2xl mb-8 leading-relaxed rounded-lg bg-stone-900 bg-opacity-70 p-4">
+                Dominate the Red Planet! A 2D multiplayer strategy game where you extract resources, produce goods, and outmaneuver rivals to become the ultimate Martian magnate.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="#mailing-list" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    Join Mailing List
+                </a>
+                <a href="#steam-page" class="bg-gray-700 hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-full shadow-3xl transition duration-300 transform hover:scale-105">
+                    View on Steam
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Game Section -->
+    <section id="about" class="py-16 sm:py-20 md:py-24 px-4 sm:px-8 section-gradient text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-red-400">About the Game</h2>
+            <p class="text-md sm:text-lg mb-8 leading-relaxed">
+                In Haswell, players embark on an exciting journey to conquer the Martian economy. Starting with humble beginnings, you'll establish mining operations, refine raw resources, and manufacture advanced goods. Engage in a dynamic player-driven market, strategically buying low and selling high to accumulate wealth. The ultimate goal? Acquire enough capital to buy out your opponents and claim total economic supremacy on Mars!
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div class="p-6 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold mb-3 text-red-300">Resource Extraction</h3>
+                    <p class="text-gray-300">Mine valuable minerals and gases from the Martian crust to fuel your industrial empire.</p>
+                </div>
+                <div class="p-6 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold mb-3 text-red-300">Production Chains</h3>
+                    <p class="text-gray-300">Transform raw resources into complex goods through intricate production lines.</p>
+                </div>
+                <div class="p-6 bg-gray-800 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold mb-3 text-red-300">Dynamic Economy</h3>
+                    <p class="text-300">Engage in real-time trading with other players, influencing market prices and securing profits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section id="screenshots" class="py-16 sm:py-20 md:py-24 px-4 sm:px-8 bg-gray-900 text-center">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-red-400">Screenshots</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Placeholder for screenshots - replace with actual images -->
+                <div class="rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 bg-gray-800">
+                    <img src="https://placehold.co/600x350/2d2d2d/ffffff?text=Gameplay+Shot+1" alt="Gameplay Screenshot 1" class="w-full h-auto object-cover rounded-t-lg">
+                    <p class="p-3 text-gray-300 text-sm">Base building and resource nodes.</p>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 bg-gray-800">
+                    <img src="https://placehold.co/600x350/2d2d2d/ffffff?text=Marketplace+UI" alt="Marketplace UI" class="w-full h-auto object-cover rounded-t-lg">
+                    <p class="p-3 text-gray-300 text-sm">Intuitive marketplace interface.</p>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 bg-gray-800">
+                    <img src="https://placehold.co/600x350/2d2d2d/ffffff?text=Production+Line" alt="Production Line" class="w-full h-auto object-cover rounded-t-lg">
+                    <p class="p-3 text-gray-300 text-sm">Automated production facilities.</p>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 bg-gray-800">
+                    <img src="https://placehold.co/600x350/2d2d2d/ffffff?text=Strategic+Map" alt="Strategic Map" class="w-full h-auto object-cover rounded-t-lg">
+                    <p class="p-3 text-gray-300 text-sm">Overview of the Martian landscape.</p>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 bg-gray-800">
+                    <img src="https://placehold.co/600x350/2d2d2d/ffffff?text=Player+Interaction" alt="Player Interaction" class="w-full h-auto object-cover rounded-t-lg">
+                    <p class="p-3 text-gray-300 text-sm">Engaging with other players.</p>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 bg-gray-800">
+                    <img src="https://placehold.co/600x350/2d2d2d/ffffff?text=Pixel+Art+Detail" alt="Pixel Art Detail" class="w-full h-auto object-cover rounded-t-lg">
+                    <p class="p-3 text-gray-300 text-sm">Close-up of pixel-perfect graphics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mailing List Section -->
+    <section id="mailing-list" class="py-16 sm:py-20 md:py-24 px-4 sm:px-8 section-gradient text-center">
+        <div class="max-w-2xl mx-auto bg-gray-800 p-8 rounded-xl shadow-2xl">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-red-400">Stay Updated!</h2>
+            <p class="text-lg mb-8 leading-relaxed">
+                Be the first to know about development updates, beta access, and release news. Join our exclusive mailing list!
+            </p>
+            <form class="flex flex-col space-y-4">
+                <input type="email" placeholder="Your Email Address" class="w-full p-4 rounded-lg bg-gray-700 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition duration-300" required>
+                <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
+                    Sign Me Up!
+                </button>
+            </form>
+            <p class="text-sm text-gray-400 mt-4">We respect your privacy and will not share your email.</p>
+        </div>
+    </section>
+
+    <!-- Steam Page Section -->
+    <section id="steam-page" class="py-16 sm:py-20 md:py-24 px-4 sm:px-8 bg-gray-900 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-red-400">Visit Our Steam Page</h2>
+            <p class="text-lg mb-8 leading-relaxed">
+                Wishlist Haswell on Steam to get notified on release and support our development!
+            </p>
+            <a href="https://store.steampowered.com/app/YOUR_GAME_ID/Haswell/" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full shadow-lg transition duration-300 transform hover:scale-105 flex items-center justify-center space-x-3 mx-auto max-w-xs">
+                <!-- Placeholder for Steam icon using a simple SVG -->
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3 18h-2v-12h2v12zm5 0h-2v-12h2v12zm5 0h-2v-12h2v12z"/>
+                </svg>
+                <span>Go to Steam</span>
+            </a>
+            <p class="text-sm text-gray-400 mt-6">
+                (Please replace `YOUR_GAME_ID` with your actual Steam App ID when available)
+            </p>
+        </div>
+    </section>
+
+    <!-- Meet the Developer Section -->
+    <section id="developer" class="py-16 sm:py-20 md:py-24 px-4 sm:px-8 section-gradient text-center">
+        <div class="max-w-3xl mx-auto bg-gray-800 p-8 rounded-xl shadow-2xl">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-red-400">Development Team</h2>
+            <div class="flex flex-col sm:flex-row items-center sm:space-x-8">
+                <div class="flex-shrink-0 mb-6 sm:mb-0">
+                    <!-- Placeholder for developer's image -->
+                    <img src="https://placehold.co/150x150/555555/ffffff?text=Dev+Photo" alt="Developer Photo" class="rounded-full w-32 h-32 sm:w-40 sm:h-40 object-cover mx-auto shadow-lg border-4 border-red-500">
+                </div>
+                <div class="text-left">
+                    <h3 class="text-2xl font-semibold mb-2 text-white">Caleb Houlding</h3>
+                    <p class="text-md leading-relaxed text-gray-300">
+                        Caleb is the lead game designer, developer, and creator. Born on Mars this game is second nature to him.
+                    </p>
+                    <div class="mt-4 flex justify-center sm:justify-start space-x-4">
+                        <!-- Placeholder for social media links -->
+                        <a href="#" class="text-gray-400 hover:text-red-400 transition duration-300">Website</a>
+                        <a href="#" class="text-gray-400 hover:text-red-400 transition duration-300">LinkedIn</a>
+                        <a href="#" class="text-gray-400 hover:text-red-400 transition duration-300">Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-950 text-center text-gray-500 text-sm px-4 sm:px-8">
+        <div class="max-w-4xl mx-auto">
+            <p>&copy; 2025 Haswell. All rights reserved.</p>
+            <p class="mt-2">Made with passion on the Red Planet.</p>
+        </div>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            const canvas = document.getElementById('starCanvas');
+            const ctx = canvas.getContext('2d');
+            let stars = [];
+            const numStars = 200; // Number of stars
+            let mouseX = window.innerWidth / 2;
+            let mouseY = window.innerHeight / 2;
+
+            // Function to set canvas size
+            function setCanvasSize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+
+            // Star class for individual stars
+            class Star {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 1.5 + 0.5; // Random size between 0.5 and 2
+                    this.initialOpacity = Math.random() * 0.5 + 0.5; // Initial opacity between 0.5 and 1
+                    this.opacity = this.initialOpacity;
+                    this.direction = Math.random() * Math.PI * 2; // Random direction for slight movement
+                    this.speed = Math.random() * 0.05 + 0.01; // Slower movement
+                }
+
+                // Update star position
+                update() {
+                    // Subtle random movement
+                    this.x += Math.cos(this.direction) * this.speed;
+                    this.y += Math.sin(this.direction) * this.speed;
+
+                    // Wrap stars around the screen
+                    if (this.x < 0) this.x = canvas.width;
+                    if (this.x > canvas.width) this.x = 0;
+                    if (this.y < 0) this.y = canvas.height;
+                    if (this.y > canvas.height) this.y = 0;
+
+                    // Fade in and out effect
+                    this.opacity += (Math.random() - 0.5) * 0.01; // Slightly vary opacity
+                    if (this.opacity > 1) this.opacity = 1;
+                    if (this.opacity < 0.2) this.opacity = 0.2;
+                }
+
+                // Draw star
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                    ctx.fill();
+                }
+            }
+
+            // Initialize stars
+            function initStars() {
+                stars = [];
+                for (let i = 0; i < numStars; i++) {
+                    stars.push(new Star());
+                }
+            }
+
+            // Animation loop
+            function animateStars() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+                stars.forEach(star => {
+                    star.update();
+                    star.draw();
+
+                    // Apply parallax effect based on mouse position
+                    const parallaxX = (mouseX - canvas.width / 2) * 0.005;
+                    const parallaxY = (mouseY - canvas.height / 2) * 0.005;
+
+                    star.x += parallaxX * star.size;
+                    star.y += parallaxY * star.size;
+                });
+                requestAnimationFrame(animateStars); // Loop the animation
+            }
+
+            // Event listener for mouse movement
+            window.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            // Event listener for window resize
+            window.addEventListener('resize', () => {
+                setCanvasSize();
+                initStars(); // Re-initialize stars on resize to distribute them correctly
+            });
+
+            // Initial setup
+            setCanvasSize();
+            initStars();
+            animateStars();
+        };
+    </script>
+</body>
+</html>
