@@ -105,7 +105,6 @@
             border-color: #58a6ff; /* GitHub focus blue */
             box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.25); /* Subtle glow */
         }
-        /* No specific styling needed for .steam-icon-monochrome as it's removed */
     </style>
 </head>
 <body class="antialiased">
@@ -204,12 +203,12 @@
         <p class="text-lg mb-8 leading-relaxed text-gh-text-secondary">
             Be the first to know about development updates, beta access, and release news.
         </p>
-        <form class="flex flex-col space-y-4" method="post" action="https://mail.harwell-game.com/subscription/form">
+        <form class="flex flex-col space-y-4 listmonk-form" method="post" action="https://mail.harwell-game.com/subscription/form">
             <input type="hidden" name="nonce" />
             <input id="fbba3" type="hidden" name="l" checked value="fbba3885-fd2f-4c1e-807d-3caa8f695a68" />
-            <input type="email" placeholder="Your Email Address" class="form-input" required>
-            <input type="text" placeholder="Your Name" class="form-input" required>
-            <button type="submit" class="btn-primary">
+            <p><input type="email" name="email" required placeholder="E-mail" class="form-input"/></p>
+            <p><input type="text" name="name" placeholder="Name (optional)" class="form-input"/></p>
+            <button type="submit" class="btn-primary inline-flex items-center justify-center space-x-3 mx-auto max-w-xs">
                 Sign Me Up!
             </button>
         </form>
