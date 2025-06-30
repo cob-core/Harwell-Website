@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harwell - A Pixel Strategy Game</title>
-    <!-- Google Fonts for Inter -->
+    <title>Harwell</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* GitHub-inspired Color Palette, now with Martian Red accents */
         :root {
             --gh-bg-primary: #0d1117; /* Darkest background */
             --gh-bg-secondary: #161b22; /* Card/section background */
@@ -61,6 +59,7 @@
         /* Custom style for Harwell title font */
         .font-pixel {
             font-family: 'Pixellari', 'Press Start 2P', cursive; /* Fallback to Press Start 2P and cursive */
+            text-transform: uppercase; /* Make title all capitals */
         }
 
         /* Custom button styles to match GitHub */
@@ -106,13 +105,7 @@
             border-color: #58a6ff; /* GitHub focus blue */
             box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.25); /* Subtle glow */
         }
-
-        /* Monochrome Steam icon adjustments */
-        .steam-icon-monochrome {
-            /* This is a generic Steam icon, which by setting fill="currentColor"
-               will inherit the button's white text color, making it monochrome.
-               No further CSS needed for this specific SVG to be monochrome. */
-        }
+        /* No specific styling needed for .steam-icon-monochrome as it's removed */
     </style>
 </head>
 <body class="antialiased">
@@ -125,20 +118,23 @@
     <!-- Overlay for text readability (Z-index: 2) -->
     <div class="absolute inset-0 overlay"></div>
 
-    <!-- Content (Logo, Title, Subtitle, Buttons - Z-index: 10) -->
+    <!-- Content (Title, Subtitle, Buttons - Z-index: 10) -->
     <div class="relative z-10 p-4 sm:p-8 md:p-12 max-w-4xl mx-auto">
-        <h1 class="text-6xl sm:text-7xl md:text-8xl font-bold mb-4 rounded-lg bg-black bg-opacity-50 p-4 font-pixel">
-            HARWELL
+        <!-- Game Logo removed -->
+
+        <h1 class="text-6xl sm:text-7xl md:text-8xl font-bold mb-4 rounded-lg bg-opacity-50 p-4 font-pixel">
+            Harwell
         </h1>
-        <p class="text-lg sm:text-xl md:text-2xl mb-8 leading-relaxed rounded-md bg-black bg-opacity-50 p-4">
-            Extract resources, sell high, buy low, and most importantly - buy out the other players.
+        <p class="text-lg sm:text-xl md:text-2xl mb-8 leading-relaxed rounded-md bg-opacity-50 p-4 font-pixel">
+            The only business strategy game where a dust storm can bankrupt you and colony politics determine your profit margins.
         </p>
         <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
             <a href="#mailing-list" class="btn-primary">
                 Join Mailing List
             </a>
             <a href="#steam-page" class="inline-flex items-center justify-center space-x-3 mx-auto max-w-xs btn-steam">
-                <span>Steam Page</span>
+                <!-- Steam Icon removed -->
+                <span>Go to Steam</span>
             </a>
         </div>
     </div>
@@ -173,7 +169,6 @@
     <div class="max-w-5xl mx-auto">
         <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-martian-red">Screenshots</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Placeholder for screenshots - replace with actual images -->
             <div class="rounded-md overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 section-background border border-gh-border">
                 <img src="https://placehold.co/600x350/161b22/c9d1d9?text=Gameplay+Shot+1" alt="Gameplay Screenshot 1" class="w-full h-auto object-cover rounded-t-md">
                 <p class="p-3 text-gh-text-secondary text-sm">Base building and resource nodes.</p>
@@ -205,12 +200,15 @@
 <!-- Mailing List Section -->
 <section id="mailing-list" class="py-16 sm:py-20 md:py-24 px-4 sm:px-8 section-gradient text-center">
     <div class="max-w-2xl mx-auto section-background p-8 rounded-lg shadow-xl border border-gh-border">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-martian-red">Stay Updated!</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-martian-red">Stay Updated</h2>
         <p class="text-lg mb-8 leading-relaxed text-gh-text-secondary">
             Be the first to know about development updates, beta access, and release news. Join our exclusive mailing list!
         </p>
-        <form class="flex flex-col space-y-4">
+        <form class="flex flex-col space-y-4" method="post" action="https://mail.cob-cloud.com/subscription/form">
+            <input type="hidden" name="nonce" />
+            <input id="fbba3" type="hidden" name="l" checked value="fbba3885-fd2f-4c1e-807d-3caa8f695a68" />
             <input type="email" placeholder="Your Email Address" class="form-input" required>
+            <input type="text" placeholder="Your Name" class="form-input" required>
             <button type="submit" class="btn-primary">
                 Sign Me Up!
             </button>
@@ -227,15 +225,8 @@
             Wishlist Harwell on Steam to get notified on release and support our development!
         </p>
         <a href="https://store.steampowered.com/app/YOUR_GAME_ID/Harwell/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center space-x-3 mx-auto max-w-xs btn-steam">
-            <!-- Monochrome Steam Icon -->
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3 18h-2v-12h2v12zm5 0h-2v-12h2v12zm5 0h-2v-12h2v12z"/>
-            </svg>
             <span>Go to Steam</span>
         </a>
-        <p class="text-sm text-gh-text-secondary mt-6">
-            (Please replace `YOUR_GAME_ID` with your actual Steam App ID when available)
-        </p>
     </div>
 </section>
 
@@ -251,11 +242,11 @@
             <div class="text-left">
                 <h3 class="text-2xl font-semibold mb-2 text-gh-text-primary">Caleb Houlding</h3>
                 <p class="text-md leading-relaxed text-gh-text-secondary">
-                    Developer, designer, and passionate about Harwell.
+                    Developer, designer, enthusiast.
                 </p>
                 <div class="mt-4 flex justify-center sm:justify-start space-x-4">
                     <!-- Placeholder for social media links -->
-                    <a href="#" class="text-gh-text-secondary hover:text-martian-red transition duration-300">Twitter</a>
+                    <a href="#" class="text-gh-text-secondary hover:text-martian-red transition duration-300">Website</a>
                     <a href="#" class="text-gh-text-secondary hover:text-martian-red transition duration-300">LinkedIn</a>
                     <a href="#" class="text-gh-text-secondary hover:text-martian-red transition duration-300">Portfolio</a>
                 </div>
