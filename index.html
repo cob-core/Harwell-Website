@@ -18,6 +18,7 @@
             --gh-border: #30363d; /* Border/separator color */
             --steam-blue: #1B2838; /* Steam brand blue */
             --steam-blue-hover: #2A475E; /* Slightly lighter Steam blue on hover */
+            --reddit-red: #FF4500;
         }
 
         body {
@@ -67,10 +68,11 @@
         .btn-primary {
             background-color: var(--martian-red); /* Changed to red */
             color: white;
-            padding: 0.75rem 1.5rem; /* py-3 px-6 */
-            border-radius: 0.375rem; /* rounded-md */
-            font-weight: 600; /* font-semibold */
-            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            border: 1px solid var(--martian-red); /* Consistent border */
+            transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, transform 0.2s ease-in-out;
         }
         .btn-primary:hover {
             background-color: var(--martian-red-hover); /* Changed to darker red */
@@ -86,8 +88,41 @@
             border: 1px solid var(--steam-blue); /* Consistent border */
             transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, transform 0.2s ease-in-out;
         }
+        .btn-steamCommunity {
+            background-color: var(--steam-blue);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            border: 1px solid var(--steam-blue); /* Consistent border */
+            transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+        .btn-reddit {
+            background-color: var(--reddit-red);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            border: 1px solid var(--steam-blue); /* Consistent border */
+            transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
         .btn-steam:hover {
             background-color: var(--steam-blue-hover);
+            border-color: var(--steam-blue-hover);
+            transform: scale(1.02);
+        }
+        .btn-steam:hover {
+            background-color: var(--steam-blue-hover);
+            border-color: var(--steam-blue-hover);
+            transform: scale(1.02);
+        }
+        .btn-steamCommunity:hover {
+            background-color: var(--steam-blue-hover);
+            border-color: var(--steam-blue-hover);
+            transform: scale(1.02);
+        }
+        .btn-reddit:hover {
+            background-color: var(--reddit-red);
             border-color: var(--steam-blue-hover);
             transform: scale(1.02);
         }
@@ -128,13 +163,13 @@
         <p class="text-lg sm:text-xl md:text-2xl mb-8 leading-relaxed rounded-md bg-opacity-50 p-4 font-pixel">
             Build your company on Mars - where terraforming is profit, dust storms are bankruptcy, and politics controls the air you breathe.
         </p>
-        <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-2 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
             <a href="#mailing-list" class="btn-primary">
-                Join Mailing List
+                <span>Join Mailing List</span>
             </a>
-            <a href="https://steamcommunity.com/groups/Harwell" class="inline-flex items-center justify-center space-x-3 mx-auto max-w-xs btn-steam"> <!-- Update to https://store.steampowered.com/app/3851590/Harwell/ once released -->
-                <!-- Steam Icon removed -->
+            <a href="https://steamcommunity.com/groups/Harwell" class="btn-steam"> <!-- Update to https://store.steampowered.com/app/3851590/Harwell/ once released -->
                 <span>Coming Soon on Steam</span>
+            </a>
             </a>
         </div>
     </div>
@@ -145,20 +180,20 @@
     <div class="max-w-4xl mx-auto">
         <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-martian-red">About the Game</h2>
         <p class="text-md sm:text-lg mb-8 leading-relaxed text-gh-text-secondary">
-            Starting with humble beginnings, establish mining operations, refine raw resources, and manufacture advanced goods. Engage in a dynamic player-driven market, strategically buying low and selling high to accumulate wealth. The ultimate goal? Acquire enough capital to buy out your opponents and claim total monopoly on the new planet.
+            Establish mining operations, refine raw resources, and manufacture advanced goods. Engage in a dynamic player-driven market, strategically buying low and selling high to accumulate wealth. <br />The ultimate goal? Acquire enough capital to buy out your opponents and claim total monopoly on the new planet - using any means necessary.
         </p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             <div class="p-6 section-background rounded-md shadow-xl border border-gh-border hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                <h3 class="text-xl font-semibold mb-3 text-gh-text-primary">Resource Extraction</h3>
-                <p class="text-gh-text-secondary">Mine valuable minerals from the Martian crust to fuel your industrial empire.</p>
-            </div>
-            <div class="p-6 section-background rounded-md shadow-xl border border-gh-border hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
                 <h3 class="text-xl font-semibold mb-3 text-gh-text-primary">Production Chains</h3>
-                <p class="text-gh-text-secondary">Transform raw resources into complex goods through intricate production lines.</p>
+                <p class="text-gh-text-secondary">Mine valuable minerals from the Martian crust and feed those resources into your factories to produce complex goods.</p>
             </div>
             <div class="p-6 section-background rounded-md shadow-xl border border-gh-border hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
                 <h3 class="text-xl font-semibold mb-3 text-gh-text-primary">Dynamic Economy</h3>
-                <p class="text-gh-text-secondary">Engage in real-time trading with other players, influencing market prices and securing profits.</p>
+                <p class="text-gh-text-secondary">Engage in real-time trading with other players using the dynamically changing simulation market system that sets prices based on real-world economics.</p>
+            </div>
+            <div class="p-6 section-background rounded-md shadow-xl border border-gh-border hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                <h3 class="text-xl font-semibold mb-3 text-gh-text-primary">Corporate Diplomacy</h3>
+                <p class="text-gh-text-secondary">Fight off the other corporations by making deals with the colony, fight to implement regulations via the Mars Commerce Forum, or sabotage competitors with black market actions.</p>
             </div>
         </div>
     </div>
@@ -166,34 +201,24 @@
 
 <!-- Screenshots Section -->
 <section id="screenshots" class="py-16 sm:py-20 md:py-24 px-4 sm:px-8 bg-gh-bg-primary text-center">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-martian-red">Screenshots Coming Soon</h2>
-    <div class="max-w-5xl mx-auto" style="display:none">
+    <div class="max-w-5xl mx-auto">
         <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-martian-red">Screenshots</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="rounded-md overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 section-background border border-gh-border">
-                <img src="https://placehold.co/600x350/161b22/c9d1d9?text=Gameplay+Shot+1" alt="Gameplay Screenshot 1" class="w-full h-auto object-cover rounded-t-md">
-                <p class="p-3 text-gh-text-secondary text-sm">Base building and resource nodes.</p>
+                <img src="screenshots/screenshot1.png" alt="Gameplay Screenshot 1" class="w-full h-auto object-cover rounded-t-md">
+                <p class="p-3 text-gh-text-secondary text-sm">Beautiful Pixel Graphics</p>
             </div>
             <div class="rounded-md overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 section-background border border-gh-border">
-                <img src="https://placehold.co/600x350/161b22/c9d1d9?text=Marketplace+UI" alt="Marketplace UI" class="w-full h-auto object-cover rounded-t-md">
-                <p class="p-3 text-gh-text-secondary text-sm">Intuitive marketplace interface.</p>
+                <img src="screenshots/steamBuilding.gif" alt="Marketplace UI" class="w-full h-auto object-cover rounded-t-md">
+                <p class="p-3 text-gh-text-secondary text-sm">Randomly Generated Maps</p>
             </div>
             <div class="rounded-md overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 section-background border border-gh-border">
-                <img src="https://placehold.co/600x350/161b22/c9d1d9?text=Production+Line" alt="Production Line" class="w-full h-auto object-cover rounded-t-md">
-                <p class="p-3 text-gh-text-secondary text-sm">Automated production facilities.</p>
+                <img src="screenshots/steamMiners.gif" alt="Production Line" class="w-full h-auto object-cover rounded-t-md">
+                <p class="p-3 text-gh-text-secondary text-sm">Automated Production Chains</p>
             </div>
             <div class="rounded-md overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 section-background border border-gh-border">
-                <img src="https://placehold.co/600x350/161b22/c9d1d9?text=Strategic+Map" alt="Strategic Map" class="w-full h-auto object-cover rounded-t-md">
-                <p class="p-3 text-gh-text-secondary text-sm">Overview of the Martian landscape.</p>
-            </div>
-            <div class="rounded-md overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 section-background border border-gh-border">
-                <img src="https://placehold.co/600x350/161b22/c9d1d9?text=Player+Interaction" alt="Player Interaction" class="w-full h-auto object-cover rounded-t-md">
-                <p class="p-3 text-gh-text-secondary text-sm">Engaging with other players.</p>
-            </div>
-            <div class="rounded-md overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 section-background border border-gh-border">
-                <img src="https://placehold.co/600x350/161b22/c9d1d9?text=Pixel+Art+Detail" alt="Pixel Art Detail" class="w-full h-auto object-cover rounded-t-md">
-                <p class="p-3 text-gh-text-secondary text-sm">Close-up of pixel-perfect graphics.</p>
-            </div>
+                <img src="screenshots/steamMarket.gif" alt="Pixel Art Detail" class="w-full h-auto object-cover rounded-t-md">
+                <p class="p-3 text-gh-text-secondary text-sm">Dynamic Player-Driven Market</p>
         </div>
     </div>
 </section>
@@ -221,13 +246,21 @@
 <!-- Steam Page Section -->
 <section id="steam-page" class="py-16 sm:py-20 md:py-24 px-4 sm:px-8 bg-gh-bg-primary text-center">
     <div class="max-w-3xl mx-auto">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-martian-red">Visit Our Steam Page</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-martian-red">Visit Our Steam Page & Socials</h2>
         <p class="text-lg mb-8 leading-relaxed text-gh-text-secondary">
             Wishlist Harwell on Steam to get notified on release and support our development!
         </p>
-        <a href="https://steamcommunity.com/groups/Harwell" class="inline-flex items-center justify-center space-x-3 mx-auto max-w-xs btn-steam"> <!-- Update to https://store.steampowered.com/app/3851590/Harwell/ once released -->
-            <span>Coming Soon on Steam</span>
-        </a>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a href="https://steamcommunity.com/groups/Harwell" class="inline-flex items-center justify-center space-x-3 mx-auto max-w-xs btn-steam"> <!-- Update to https://store.steampowered.com/app/3851590/Harwell/ once released -->
+                <span>Coming Soon on Steam</span>
+            </a>
+            <a href="https://steamcommunity.com/groups/Harwell" class="btn-steamCommunity" stye="background-color:white">
+                <span>Steam Community</span>
+            </a>
+            <a href="https://reddit.com/r/harwell-game" class="btn-reddit">
+                <span>Subreddit</span>
+            </a>
+        </div>
     </div>
 </section>
 
