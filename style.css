@@ -50,6 +50,7 @@ body {
     src: url('fonts/Pixellari.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 /* Custom style for Harwell title font */
 .font-pixel {
@@ -194,7 +195,7 @@ body {
     padding: 0.75rem 1.5rem;
     border-radius: 0.375rem;
     font-weight: 600;
-    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out, transform 0.1s ease-in-out;
     display: inline-flex; /* To center content with justify-content */
     align-items: center; /* To center content with justify-content */
     justify-content: center; /* To center content with justify-content */
@@ -348,7 +349,7 @@ body {
     border-radius: 0.375rem; /* rounded-md */
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
     border: 1px solid var(--gh-border);
-    transition: all 0.3s ease-in-out; /* transition duration-300 */
+    transition: all 0.15s ease-in-out; /* transition duration-300 */
 }
 .feature-card:hover {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* hover:shadow-2xl */
@@ -414,11 +415,14 @@ body {
     border-radius: 0.5rem;
     cursor: grab;
     user-select: none;
+    touch-action: pan-y pinch-zoom;
+    overscroll-behavior-x: contain;
 }
 
 .carousel-track {
     display: flex;
-    transition: transform 0.35s ease;
+    --carousel-slide-gap: 0.75rem;
+    transition: transform 0.175s ease;
     will-change: transform;
 }
 
@@ -427,10 +431,11 @@ body {
 }
 
 .carousel-slide {
-    flex: 0 0 100%;
-    width: 100%;
-    min-width: 100%;
-    margin: 0;
+    flex: 0 0 calc(100% - var(--carousel-slide-gap));
+    width: calc(100% - var(--carousel-slide-gap));
+    min-width: calc(100% - var(--carousel-slide-gap));
+    margin: 0 calc(var(--carousel-slide-gap) / 2);
+    box-sizing: border-box;
 }
 
 .screenshot-item {
@@ -457,8 +462,9 @@ body {
 
 .screenshot-image {
     width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
     border-top-left-radius: 0.375rem; /* rounded-t-md */
     border-top-right-radius: 0.375rem; /* rounded-t-md */
     -webkit-user-drag: none;
@@ -481,7 +487,7 @@ body {
     font-size: 1.4rem;
     line-height: 1;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    transition: background-color 0.1s ease, transform 0.1s ease;
 }
 
 .carousel-control:hover {
@@ -494,6 +500,10 @@ body {
         width: 100%;
         border-radius: 0.5rem;
         height: 2.5rem;
+    }
+
+    .carousel-track {
+        --carousel-slide-gap: 0.5rem;
     }
 
     .carousel-viewport {
@@ -535,7 +545,7 @@ body {
     padding: 2rem 1rem;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
+    transition: opacity 0.1s ease, visibility 0.1s ease;
 }
 
 .image-lightbox.is-open {
@@ -623,7 +633,7 @@ body.lightbox-open {
     border: 1px solid var(--gh-border);
     border-radius: 0.375rem;
     padding: 0.75rem 1rem;
-    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: border-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
     width: 100%; /* Ensure inputs take full width of their parent .mailing-list-form */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
@@ -755,7 +765,7 @@ body.lightbox-open {
     border-radius: 0.375rem;
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.06) 25%, rgba(255, 255, 255, 0.16) 50%, rgba(255, 255, 255, 0.06) 75%);
     background-size: 220% 100%;
-    animation: steam-skeleton-shimmer 1.4s ease-in-out infinite;
+    animation: steam-skeleton-shimmer 0.7s ease-in-out infinite;
 }
 
 .steam-skeleton-line {
@@ -933,12 +943,20 @@ body.lightbox-open {
 }
 
 .developer-website {
-    display: none; /* As per original HTML, this link is hidden */
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.25rem;
+    padding: 0.35rem 0.7rem;
+    border: 1px solid var(--gh-border);
+    border-radius: 0.35rem;
+    text-decoration: none;
     color: var(--gh-text-secondary);
-    transition: color 0.3s ease-in-out; /* transition duration-300 */
+    transition: color 0.1s ease, border-color 0.1s ease, background-color 0.1s ease;
 }
 .developer-website:hover {
     color: var(--martian-red);
+    border-color: var(--martian-red);
+    background-color: rgba(204, 34, 0, 0.08);
 }
 
 /* Footer */
@@ -960,4 +978,126 @@ body.lightbox-open {
 
 .footer-tagline {
     margin-top: 0.5rem; /* mt-2 */
+}
+
+/* Enhanced UI polish and accessibility */
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -3.5rem;
+    z-index: 1001;
+    padding: 0.65rem 0.9rem;
+    border-radius: 0.4rem;
+    background: var(--martian-red);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: top 0.18s ease;
+}
+
+.skip-link:focus-visible {
+    top: 1rem;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+:where(a, button, input, [tabindex]):focus-visible {
+    outline: 2px solid #58a6ff;
+    outline-offset: 2px;
+}
+
+.js .hero-content > * {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: hero-enter 310ms ease forwards;
+}
+
+.js .hero-content > .hero-subtitle {
+    animation-delay: 60ms;
+}
+
+.js .hero-content > .hero-buttons-container {
+    animation-delay: 110ms;
+}
+
+@keyframes hero-enter {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.js [data-reveal] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 300ms ease, transform 300ms ease;
+    transition-delay: calc(var(--reveal-delay, 0ms) * 0.5);
+}
+
+.js [data-reveal].reveal-visible {
+    opacity: 1;
+    transform: none;
+}
+
+.interactive-glow {
+    transition: transform 130ms ease, box-shadow 130ms ease;
+}
+
+.interactive-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.35);
+}
+
+.carousel-indicator:focus-visible,
+.carousel-control:focus-visible,
+.screenshot-zoom-trigger:focus-visible,
+.lightbox-close:focus-visible {
+    outline: 2px solid #58a6ff;
+    outline-offset: 3px;
+}
+
+@supports (content-visibility: auto) {
+    main > section {
+        content-visibility: auto;
+        contain-intrinsic-size: 1px 780px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .js .hero-content > *,
+    .js [data-reveal] {
+        animation: none;
+        transition: none;
+        transform: none;
+        opacity: 1;
+    }
+
+    .steam-skeleton-line,
+    .steam-skeleton-link {
+        animation: none;
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .feature-card:hover,
+    .btn-primary:hover,
+    .btn-steam:hover,
+    .btn-steamCommunity:hover,
+    .btn-reddit:hover,
+    .interactive-glow:hover {
+        transform: none;
+    }
 }

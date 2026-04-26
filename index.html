@@ -4,13 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The official website for the game Harwell, the competitive strategy game, now available on Steam." />
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#0d1117">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Harwell">
+    <meta property="og:title" content="Harwell">
+    <meta property="og:description" content="Build your company on Mars in Harwell, a competitive strategy game where economics, politics, and risk decide who controls the colony.">
+    <meta property="og:url" content="https://harwell-game.com/">
+    <meta property="og:image" content="https://harwell-game.com/screenshots/SCR%203_finance_ui.webp">
+    <meta property="og:image:width" content="2560">
+    <meta property="og:image:height" content="1440">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Harwell">
+    <meta name="twitter:description" content="Build your company on Mars in Harwell, a competitive strategy game where economics, politics, and risk decide who controls the colony.">
+    <meta name="twitter:image" content="https://harwell-game.com/screenshots/SCR%203_finance_ui.webp">
     <title>Harwell</title>
     <link rel="icon" type="image/x-icon" href="assets/HarwellIcon.ico">
-    <link rel="stylesheet" href="style.css"> </head>
+    <link rel="canonical" href="https://harwell-game.com/">
+    <link rel="preload" href="fonts/Pixellari.ttf" as="font" type="font/ttf">
+    <link rel="dns-prefetch" href="//steamcommunity.com">
+    <link rel="dns-prefetch" href="//api.rss2json.com">
+    <link rel="dns-prefetch" href="//api.allorigins.win">
+    <link rel="preconnect" href="https://steamcommunity.com" crossorigin>
+    <link rel="preconnect" href="https://api.rss2json.com" crossorigin>
+    <link rel="preconnect" href="https://api.allorigins.win" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <script>document.documentElement.classList.add('js');</script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "VideoGame",
+            "name": "Harwell",
+            "description": "Build your company on Mars in a competitive strategy game where market forces, politics, and sabotage shape your rise.",
+            "url": "https://harwell-game.com/",
+            "genre": ["Strategy", "Simulation"],
+            "gamePlatform": "PC",
+            "author": {
+                "@type": "Person",
+                "name": "Caleb Houlding"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Aquila"
+            }
+        }
+    </script>
+</head>
 <body class="antialiased">
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <header class="hero-section">
-    <canvas id="starCanvas"></canvas>
+    <canvas id="starCanvas" aria-hidden="true"></canvas>
 
     <div class="overlay"></div>
 
@@ -25,16 +71,18 @@
             <a href="#mailing-list" class="btn-primary">
                 <span>Join Mailing List</span>
             </a>
-            <a href="https://store.steampowered.com/app/3851590/Harwell/" class="btn-steam">
+            <a href="https://store.steampowered.com/app/3851590/Harwell/" class="btn-steam" target="_blank" rel="noopener noreferrer">
                 <span>Wishlist on Steam!</span>
             </a>
         </div>
     </div>
 </header>
 
+<main id="main-content">
+
 <section class="game-credits-section text-center" aria-label="Game credits">
     <div class="section-container">
-        <div class="game-credits-panel">
+        <div class="game-credits-panel interactive-glow" data-reveal>
             <div class="game-credits-grid">
                 <div class="game-credits-column">
                     <p class="game-credits-label">Developed by</p>
@@ -42,7 +90,7 @@
                 </div>
                 <div class="game-credits-column">
                     <p class="game-credits-label">Published by</p>
-                    <img src="assets/aquila.png" alt="Aquila logo" class="game-credits-logo" loading="lazy">
+                    <img src="assets/aquila.png" alt="Aquila logo" class="game-credits-logo" width="613" height="150" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
@@ -51,20 +99,20 @@
 
 <section id="about" class="about-game-section text-center">
     <div class="section-container">
-        <h2 class="section-title text-martian-red">About the Game</h2>
-        <p class="section-description text-gh-text-secondary">
+        <h2 class="section-title text-martian-red" data-reveal>About the Game</h2>
+        <p class="section-description text-gh-text-secondary" data-reveal style="--reveal-delay: 80ms;">
             Establish mining operations, refine raw resources, and manufacture advanced goods. Engage in a dynamic player-driven market, strategically buying low and selling high to accumulate wealth. <br />The ultimate goal? Acquire enough capital to buy out your opponents and claim total monopoly on the new planet - using any means necessary.
         </p>
         <div class="about-features-grid text-left">
-            <div class="feature-card">
+            <div class="feature-card interactive-glow" data-reveal style="--reveal-delay: 140ms;">
                 <h3 class="feature-title text-gh-text-primary">Production Chains</h3>
                 <p class="feature-description text-gh-text-secondary">Mine valuable minerals from the Martian crust and feed those resources into your factories to produce complex goods.</p>
             </div>
-            <div class="feature-card">
+            <div class="feature-card interactive-glow" data-reveal style="--reveal-delay: 220ms;">
                 <h3 class="feature-title text-gh-text-primary">Dynamic Economy</h3>
                 <p class="feature-description text-gh-text-secondary">Engage in real-time trading with other players using the dynamically changing simulation market system that sets prices based on real-world economics.</p>
             </div>
-            <div class="feature-card">
+            <div class="feature-card interactive-glow" data-reveal style="--reveal-delay: 300ms;">
                 <h3 class="feature-title text-gh-text-primary">Corporate Diplomacy</h3>
                 <p class="feature-description text-gh-text-secondary">Fight off the other corporations by making deals with the colony, fight to implement regulations via the Mars Commerce Forum, or sabotage competitors with black market actions.</p>
             </div>
@@ -74,100 +122,106 @@
 
 <section id="screenshots" class="screenshots-section text-center">
     <div class="section-container-large">
-        <h2 class="section-title text-martian-red">Screenshots</h2>
+        <h2 class="section-title text-martian-red" data-reveal>Screenshots</h2>
         <div class="screenshots-carousel" aria-label="Screenshot carousel">
-            <button type="button" class="carousel-control carousel-control-prev" aria-label="Previous screenshot">&#10094;</button>
-            <div class="carousel-viewport">
-                <div class="carousel-track">
-                    <figure class="screenshot-item carousel-slide">
+            <button type="button" class="carousel-control carousel-control-prev" aria-label="Previous screenshot" aria-controls="screenshots-carousel-track">&#10094;</button>
+            <div class="carousel-viewport" tabindex="0" aria-label="Screenshot carousel. Use left and right arrow keys to navigate.">
+                <div class="carousel-track" id="screenshots-carousel-track">
+                    <figure class="screenshot-item carousel-slide interactive-glow" data-reveal>
                         <button type="button" class="screenshot-zoom-trigger" aria-label="Open enlarged image">
-                            <img src="screenshots/SCR%201_BLACK%20MARKET.webp" alt="A screenshot of the early game" class="screenshot-image" loading="lazy">
+                            <img src="screenshots/SCR%201_BLACK%20MARKET.webp" alt="A screenshot of the early game" class="screenshot-image" width="2560" height="1440" loading="lazy" decoding="async">
                         </button>
                         <figcaption class="screenshot-caption text-gh-text-secondary">Early Game</figcaption>
                     </figure>
-                    <figure class="screenshot-item carousel-slide">
+                    <figure class="screenshot-item carousel-slide interactive-glow" data-reveal style="--reveal-delay: 80ms;">
                         <button type="button" class="screenshot-zoom-trigger" aria-label="Open enlarged image">
-                            <img src="screenshots/SCR%202_%20Map%20Overview.webp" alt="A zoomed-out screenshot of the full map" class="screenshot-image" loading="lazy">
+                            <img src="screenshots/SCR%202_%20Map%20Overview.webp" alt="A zoomed-out screenshot of the full map" class="screenshot-image" width="1920" height="1080" loading="lazy" decoding="async">
                         </button>
                         <figcaption class="screenshot-caption text-gh-text-secondary">An Overview</figcaption>
                     </figure>
-                    <figure class="screenshot-item carousel-slide">
+                    <figure class="screenshot-item carousel-slide interactive-glow" data-reveal style="--reveal-delay: 160ms;">
                         <button type="button" class="screenshot-zoom-trigger" aria-label="Open enlarged image">
-                            <img src="screenshots/SCR%203_finance_ui.webp" alt="A screenshot of the financial data panel" class="screenshot-image" loading="lazy">
+                            <img src="screenshots/SCR%203_finance_ui.webp" alt="A screenshot of the financial data panel" class="screenshot-image" width="2560" height="1440" loading="lazy" decoding="async">
                         </button>
                         <figcaption class="screenshot-caption text-gh-text-secondary">The Finance Panel</figcaption>
                     </figure>
-                    <figure class="screenshot-item carousel-slide">
+                    <figure class="screenshot-item carousel-slide interactive-glow" data-reveal style="--reveal-delay: 240ms;">
                         <button type="button" class="screenshot-zoom-trigger" aria-label="Open enlarged image">
-                            <img src="screenshots/SCR%204_colony.webp" alt="A screenshot of the central colony" class="screenshot-image" loading="lazy">
+                            <img src="screenshots/SCR%204_colony.webp" alt="A screenshot of the central colony" class="screenshot-image" width="2560" height="1440" loading="lazy" decoding="async">
                         </button>
                         <figcaption class="screenshot-caption text-gh-text-secondary">The Central Colony</figcaption>
                     </figure>
-                    <figure class="screenshot-item carousel-slide">
+                    <figure class="screenshot-item carousel-slide interactive-glow" data-reveal style="--reveal-delay: 320ms;">
                         <button type="button" class="screenshot-zoom-trigger" aria-label="Open enlarged image">
-                            <img src="screenshots/SCR%205_labour_ui.webp" alt="A screenshot of the dynamic worker management system" class="screenshot-image" loading="lazy">
+                            <img src="screenshots/SCR%205_labour_ui.webp" alt="A screenshot of the dynamic worker management system" class="screenshot-image" width="2560" height="1440" loading="lazy" decoding="async">
                         </button>
                         <figcaption class="screenshot-caption text-gh-text-secondary">A Dynamic Worker System</figcaption>
                     </figure>
-                    <figure class="screenshot-item carousel-slide">
+                    <figure class="screenshot-item carousel-slide interactive-glow" data-reveal style="--reveal-delay: 400ms;">
                         <button type="button" class="screenshot-zoom-trigger" aria-label="Open enlarged image">
-                            <img src="screenshots/SCR%206_late_game_overview.webp" alt="A screenshot of a late-game colony overview" class="screenshot-image" loading="lazy">
+                            <img src="screenshots/SCR%206_late_game_overview.webp" alt="A screenshot of a late-game colony overview" class="screenshot-image" width="2560" height="1440" loading="lazy" decoding="async">
                         </button>
                         <figcaption class="screenshot-caption text-gh-text-secondary">Late Game</figcaption>
                     </figure>
-                    <figure class="screenshot-item carousel-slide">
+                    <figure class="screenshot-item carousel-slide interactive-glow" data-reveal style="--reveal-delay: 480ms;">
                         <button type="button" class="screenshot-zoom-trigger" aria-label="Open enlarged image">
-                            <img src="screenshots/SCR%207_market_ui.webp" alt="A screenshot of the in-game market interface" class="screenshot-image" loading="lazy">
+                            <img src="screenshots/SCR%207_market_ui.webp" alt="A screenshot of the in-game market interface" class="screenshot-image" width="2560" height="1440" loading="lazy" decoding="async">
                         </button>
                         <figcaption class="screenshot-caption text-gh-text-secondary">The Market</figcaption>
                     </figure>
                 </div>
             </div>
-            <button type="button" class="carousel-control carousel-control-next" aria-label="Next screenshot">&#10095;</button>
+            <button type="button" class="carousel-control carousel-control-next" aria-label="Next screenshot" aria-controls="screenshots-carousel-track">&#10095;</button>
         </div>
-        <div class="carousel-indicators" aria-label="Choose screenshot"></div>
+        <div class="carousel-indicators" aria-label="Choose screenshot" data-reveal style="--reveal-delay: 140ms;"></div>
     </div>
 </section>
 
-<div id="image-lightbox" class="image-lightbox" aria-hidden="true">
+<div id="image-lightbox" class="image-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Enlarged screenshot" tabindex="-1">
     <button type="button" class="lightbox-close" aria-label="Close enlarged image">&times;</button>
     <img id="lightbox-image" src="" alt="">
     <p id="lightbox-caption" class="text-gh-text-secondary"></p>
 </div>
 
 <section id="mailing-list" class="mailing-list-section text-center">
-    <div class="mailing-list-content section-background">
-        <h2 class="section-title text-martian-red">Stay Updated</h2>
-        <p class="section-description text-gh-text-secondary">
+    <div class="mailing-list-content section-background interactive-glow" data-reveal>
+        <h2 class="section-title text-martian-red" data-reveal>Stay Updated</h2>
+        <p class="section-description text-gh-text-secondary" data-reveal style="--reveal-delay: 80ms;">
             Be the first to know about development updates, beta access, and release news.
         </p>
-        <form class="mailing-list-form listmonk-form" method="post" action="https://mail.harwell-game.com/subscription/form">
+        <form class="mailing-list-form listmonk-form" method="post" action="https://mail.harwell-game.com/subscription/form" aria-describedby="mailing-list-privacy">
             <input type="hidden" name="nonce" />
-            <input id="fbba3" type="hidden" name="l" checked value="fbba3885-fd2f-4c1e-807d-3caa8f695a68" />
-            <p><input type="email" name="email" required placeholder="E-mail" class="form-input"/></p>
-            <p><input type="text" name="name" placeholder="Name (optional)" class="form-input"/></p>
+            <input id="fbba3" type="hidden" name="l" value="fbba3885-fd2f-4c1e-807d-3caa8f695a68" />
+            <p>
+                <label for="mailing-email" class="visually-hidden">Email address</label>
+                <input id="mailing-email" type="email" name="email" required placeholder="E-mail" class="form-input" autocomplete="email" inputmode="email">
+            </p>
+            <p>
+                <label for="mailing-name" class="visually-hidden">Name (optional)</label>
+                <input id="mailing-name" type="text" name="name" placeholder="Name (optional)" class="form-input" autocomplete="name">
+            </p>
             <button type="submit" class="btn-primary">
                 Sign Me Up!
             </button>
         </form>
-        <p class="mailing-list-privacy text-gh-text-secondary">We respect your privacy and will not share your email.</p>
+        <p id="mailing-list-privacy" class="mailing-list-privacy text-gh-text-secondary">We respect your privacy and will not share your email.</p>
     </div>
 </section>
 
 <section id="steam-page" class="steam-page-section text-center">
     <div class="section-container">
-        <h2 class="section-title text-martian-red">Visit Our Steam Page & Socials</h2>
-        <p class="section-description text-gh-text-secondary">
+        <h2 class="section-title text-martian-red" data-reveal>Visit Our Steam Page &amp; Socials</h2>
+        <p class="section-description text-gh-text-secondary" data-reveal style="--reveal-delay: 80ms;">
             Wishlist Harwell on Steam to get notified on release and support our development!
         </p>
-        <div class="steam-social-buttons">
-            <a href="https://store.steampowered.com/app/3851590/Harwell/" class="btn-steam">
+        <div class="steam-social-buttons" data-reveal style="--reveal-delay: 140ms;">
+            <a href="https://store.steampowered.com/app/3851590/Harwell/" class="btn-steam" target="_blank" rel="noopener noreferrer">
                 <span>Wishlist on Steam!</span>
             </a>
-            <a href="https://steamcommunity.com/app/3851590/" class="btn-steam btn-steamCommunity">
+            <a href="https://steamcommunity.com/app/3851590/" class="btn-steam btn-steamCommunity" target="_blank" rel="noopener noreferrer">
                 <span>Steam Community</span>
             </a>
-            <a href="https://www.reddit.com/r/Harwell_Game/" class="btn-reddit">
+            <a href="https://www.reddit.com/r/Harwell_Game/" class="btn-reddit" target="_blank" rel="noopener noreferrer">
                 <span>Subreddit</span>
             </a>
         </div>
@@ -176,11 +230,11 @@
 
 <section id="steam-community-updates" class="steam-community-updates-section text-center">
     <div class="section-container">
-        <h2 class="section-title text-martian-red">Latest Steam Community Posts</h2>
-        <p class="section-description text-gh-text-secondary">
+        <h2 class="section-title text-martian-red" data-reveal>Latest Steam Community Posts</h2>
+        <p class="section-description text-gh-text-secondary" data-reveal style="--reveal-delay: 80ms;">
             Fresh updates pulled directly from Steam.
         </p>
-        <div id="steam-community-posts" class="steam-community-posts" aria-live="polite">
+        <div id="steam-community-posts" class="steam-community-posts" aria-live="polite" aria-busy="true">
             <article class="steam-post-card steam-post-skeleton section-background" aria-hidden="true">
                 <div class="steam-skeleton-line steam-skeleton-title"></div>
                 <div class="steam-skeleton-line steam-skeleton-meta"></div>
@@ -206,18 +260,18 @@
                 <div class="steam-skeleton-link"></div>
             </article>
         </div>
-        <a href="https://steamcommunity.com/app/3851590/" class="btn-steam btn-steamCommunity steam-community-link">
+        <a href="https://steamcommunity.com/app/3851590/" class="btn-steam btn-steamCommunity steam-community-link" target="_blank" rel="noopener noreferrer" data-reveal style="--reveal-delay: 140ms;">
             <span>View All Community Posts</span>
         </a>
     </div>
 </section>
 
 <section id="developer" class="developer-section text-center">
-    <div class="developer-content section-background">
+    <div class="developer-content section-background interactive-glow" data-reveal>
         <h2 class="section-title text-martian-red">Meet the Developer</h2>
         <div class="developer-info">
             <div class="developer-image-container">
-                <img src="assets/profile.webp" alt="Developer Photo" class="developer-image" loading="lazy">
+                <img src="assets/profile.webp" alt="Portrait of Caleb Houlding" class="developer-image" width="200" height="200" loading="lazy" decoding="async">
             </div>
             <div class="developer-text-content">
                 <h3 class="developer-name text-gh-text-primary">Caleb Houlding</h3>
@@ -225,306 +279,470 @@
                     Developer, designer, marketer.<br />Harwell is a passion project, my dream game, and I hope it can become yours too. Go with me along the development process to find out what makes it special.
                 </p>
                 <div class="developer-socials">
-                    <a href="calebhoulding.com" class="developer-website text-gh-text-secondary">Website</a>
+                    <a href="https://calebhoulding.com" class="developer-website text-gh-text-secondary" target="_blank" rel="noopener noreferrer me" aria-label="Visit Caleb Houlding's website">Website</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+</main>
+
 <footer class="main-footer text-center text-gh-text-secondary">
     <div class="section-container">
-        <p>2026 Harwell.</p>
+        <p><span id="footer-year">2026</span> Harwell.</p>
         <p class="footer-tagline">Made with passion on the Red Planet.</p>
     </div>
 </footer>
 
 <script>
-    window.onload = function() {
-        const canvas = document.getElementById('starCanvas');
-        const ctx = canvas.getContext('2d');
-        let stars = [];
-        const numStars = 200; // Number of stars
-        let mouseX = window.innerWidth / 2;
-        let mouseY = window.innerHeight / 2;
+    (function () {
+        const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        let revealObserver = null;
+        let revealMotionListenerBound = false;
 
-        // Function to set canvas size
-        function setCanvasSize() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeFooterYear();
+            initializeRevealAnimations();
+            initializeStarfield();
+            initializeCarouselAndLightbox();
+            initializeSteamCommunityPosts();
+        });
+
+        function shouldReduceMotion() {
+            return reduceMotionQuery.matches;
         }
 
-        // Star class for individual stars
-        class Star {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 1.5 + 0.5; // Random size between 0.5 and 2
-                this.initialOpacity = Math.random() * 0.5 + 0.5; // Initial opacity between 0.5 and 1
-                this.opacity = this.initialOpacity;
-                this.direction = Math.random() * Math.PI * 2; // Random direction for slight movement
-                this.speed = Math.random() * 0.05 + 0.01; // Slower movement
-            }
-
-            // Update star position
-            update() {
-                // Subtle random movement
-                this.x += Math.cos(this.direction) * this.speed;
-                this.y += Math.sin(this.direction) * this.speed;
-
-                // Wrap stars around the screen
-                if (this.x < 0) this.x = canvas.width;
-                if (this.x > canvas.width) this.x = 0;
-                if (this.y < 0) this.y = canvas.height;
-                if (this.y > canvas.height) this.y = 0;
-
-                // Fade in and out effect
-                this.opacity += (Math.random() - 0.5) * 0.01; // Slightly vary opacity
-                if (this.opacity > 1) this.opacity = 1;
-                if (this.opacity < 0.2) this.opacity = 0.2;
-            }
-
-            // Draw star
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
-                ctx.fill();
+        function initializeFooterYear() {
+            const footerYear = document.getElementById('footer-year');
+            if (footerYear) {
+                footerYear.textContent = String(new Date().getFullYear());
             }
         }
 
-        // Initialize stars
-        function initStars() {
-            stars = [];
-            for (let i = 0; i < numStars; i++) {
-                stars.push(new Star());
+        function initializeRevealAnimations() {
+            const allRevealElements = Array.from(document.querySelectorAll('[data-reveal]'));
+            if (!allRevealElements.length) {
+                return;
             }
-        }
 
-        // Animation loop
-        function animateStars() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
-            stars.forEach(star => {
-                star.update();
-                star.draw();
+            const revealAll = (elements) => {
+                elements.forEach((element) => {
+                    element.classList.add('reveal-visible');
+                    element.setAttribute('data-reveal-bound', 'true');
+                });
+            };
 
-                // Apply parallax effect based on mouse position
-                const parallaxX = (mouseX - canvas.width / 2) * 0.005;
-                const parallaxY = (mouseY - canvas.height / 2) * 0.005;
+            if (shouldReduceMotion() || !('IntersectionObserver' in window)) {
+                revealAll(allRevealElements);
+                return;
+            }
 
-                star.x += parallaxX * star.size;
-                star.y += parallaxY * star.size;
+            if (!revealObserver) {
+                revealObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+                        entry.target.classList.add('reveal-visible');
+                        observer.unobserve(entry.target);
+                    });
+                }, { threshold: 0.16, rootMargin: '0px 0px -10% 0px' });
+            }
+
+            const unrevealedElements = allRevealElements.filter((element) => !element.hasAttribute('data-reveal-bound'));
+            unrevealedElements.forEach((element) => {
+                element.setAttribute('data-reveal-bound', 'true');
+                revealObserver.observe(element);
             });
-            requestAnimationFrame(animateStars); // Loop the animation
+
+            if (!revealMotionListenerBound && typeof reduceMotionQuery.addEventListener === 'function') {
+                reduceMotionQuery.addEventListener('change', (event) => {
+                    if (event.matches) {
+                        revealAll(Array.from(document.querySelectorAll('[data-reveal]')));
+                    }
+                });
+                revealMotionListenerBound = true;
+            }
         }
 
-        // Event listener for mouse movement
-        window.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
+        function initializeStarfield() {
+            const canvas = document.getElementById('starCanvas');
+            if (!canvas) {
+                return;
+            }
 
-        // Event listener for window resize
-        window.addEventListener('resize', () => {
+            const context = canvas.getContext('2d');
+            if (!context) {
+                return;
+            }
+
+            let stars = [];
+            const numStars = 200;
+            let mouseX = window.innerWidth / 2;
+            let mouseY = window.innerHeight / 2;
+
+            function setCanvasSize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+
+            class Star {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 1.5 + 0.5;
+                    this.initialOpacity = Math.random() * 0.5 + 0.5;
+                    this.opacity = this.initialOpacity;
+                    this.direction = Math.random() * Math.PI * 2;
+                    this.speed = Math.random() * 0.05 + 0.01;
+                }
+
+                update() {
+                    this.x += Math.cos(this.direction) * this.speed;
+                    this.y += Math.sin(this.direction) * this.speed;
+
+                    if (this.x < 0) {
+                        this.x = canvas.width;
+                    }
+                    if (this.x > canvas.width) {
+                        this.x = 0;
+                    }
+                    if (this.y < 0) {
+                        this.y = canvas.height;
+                    }
+                    if (this.y > canvas.height) {
+                        this.y = 0;
+                    }
+
+                    this.opacity += (Math.random() - 0.5) * 0.01;
+                    if (this.opacity > 1) {
+                        this.opacity = 1;
+                    }
+                    if (this.opacity < 0.2) {
+                        this.opacity = 0.2;
+                    }
+                }
+
+                draw() {
+                    context.beginPath();
+                    context.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    context.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                    context.fill();
+                }
+            }
+
+            function initStars() {
+                stars = [];
+                for (let index = 0; index < numStars; index += 1) {
+                    stars.push(new Star());
+                }
+            }
+
+            function animateStars() {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                stars.forEach((star) => {
+                    star.update();
+                    star.draw();
+
+                    const parallaxX = (mouseX - (canvas.width / 2)) * 0.005;
+                    const parallaxY = (mouseY - (canvas.height / 2)) * 0.005;
+
+                    star.x += parallaxX * star.size;
+                    star.y += parallaxY * star.size;
+                });
+                requestAnimationFrame(animateStars);
+            }
+
+            window.addEventListener('mousemove', (event) => {
+                mouseX = event.clientX;
+                mouseY = event.clientY;
+            });
+
+            window.addEventListener('resize', () => {
+                setCanvasSize();
+                initStars();
+            });
+
             setCanvasSize();
-            initStars(); // Re-initialize stars on resize to distribute them correctly
-            updateCarousel();
-        });
-
-        const carouselTrack = document.querySelector('#screenshots .carousel-track');
-        const carouselSlides = document.querySelectorAll('#screenshots .carousel-slide');
-        const carouselViewport = document.querySelector('#screenshots .carousel-viewport');
-        const prevButton = document.querySelector('#screenshots .carousel-control-prev');
-        const nextButton = document.querySelector('#screenshots .carousel-control-next');
-        const indicatorsContainer = document.querySelector('#screenshots .carousel-indicators');
-        const zoomTriggers = document.querySelectorAll('#screenshots .screenshot-zoom-trigger');
-        const lightbox = document.getElementById('image-lightbox');
-        const lightboxImage = document.getElementById('lightbox-image');
-        const lightboxCaption = document.getElementById('lightbox-caption');
-        const lightboxClose = document.querySelector('.lightbox-close');
-        const steamPostsContainer = document.getElementById('steam-community-posts');
-        let currentSlide = 0;
-        let touchStartX = 0;
-        let touchEndX = 0;
-        let isMouseDragging = false;
-        let hasMouseDragged = false;
-        let mouseDragStartX = 0;
-        let mouseDragDeltaX = 0;
-        let mouseDragStartTime = 0;
-        let suppressZoomClickUntil = 0;
-        let touchStartTime = 0;
-
-        function getCarouselSlideWidth() {
-            return carouselViewport ? carouselViewport.clientWidth : 0;
+            initStars();
+            animateStars();
         }
 
-        function setCarouselTransform(offsetPx, withTransition) {
-            const slideWidth = getCarouselSlideWidth();
-            const baseOffsetPx = -currentSlide * slideWidth;
-            carouselTrack.style.transition = withTransition ? 'transform 0.35s ease' : 'none';
-            carouselTrack.style.transform = `translateX(${baseOffsetPx + offsetPx}px)`;
-        }
+        function initializeCarouselAndLightbox() {
+            const carouselTrack = document.querySelector('#screenshots .carousel-track');
+            const carouselViewport = document.querySelector('#screenshots .carousel-viewport');
+            const prevButton = document.querySelector('#screenshots .carousel-control-prev');
+            const nextButton = document.querySelector('#screenshots .carousel-control-next');
+            const indicatorsContainer = document.querySelector('#screenshots .carousel-indicators');
+            const slides = Array.from(document.querySelectorAll('#screenshots .carousel-slide'));
+            const zoomTriggers = Array.from(document.querySelectorAll('#screenshots .screenshot-zoom-trigger'));
+            const lightbox = document.getElementById('image-lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const lightboxClose = document.querySelector('.lightbox-close');
 
-        function getDragSlideDirection(deltaPx, durationMs) {
-            const slideWidth = getCarouselSlideWidth();
-            if (!slideWidth) {
+            if (!carouselTrack || !carouselViewport || !prevButton || !nextButton || !indicatorsContainer || !slides.length) {
+                return;
+            }
+
+            let currentSlide = 0;
+            let isPointerDragging = false;
+            let hasPointerDragged = false;
+            let pointerStartX = 0;
+            let pointerDeltaX = 0;
+            let pointerStartTime = 0;
+            let suppressZoomClickUntil = 0;
+            let lastFocusedElement = null;
+
+            function getSlideWidth() {
+                return carouselViewport.clientWidth || 0;
+            }
+
+            function applyTransform(offsetPx, withTransition) {
+                const slideWidth = getSlideWidth();
+                const baseOffsetPx = -currentSlide * slideWidth;
+                const animate = withTransition && !shouldReduceMotion();
+                carouselTrack.style.transition = animate ? 'transform 0.175s ease' : 'none';
+                carouselTrack.style.transform = `translateX(${baseOffsetPx + offsetPx}px)`;
+            }
+
+            function getDragDirection(deltaPx, durationMs) {
+                const slideWidth = getSlideWidth();
+                if (!slideWidth) {
+                    return 0;
+                }
+
+                const distance = Math.abs(deltaPx);
+                const standardThreshold = slideWidth * 0.18;
+                const flickDistanceThreshold = Math.max(22, slideWidth * 0.06);
+                const isQuickFlick = durationMs > 0 && durationMs < 220 && distance > flickDistanceThreshold;
+
+                if (distance > standardThreshold || isQuickFlick) {
+                    return deltaPx > 0 ? -1 : 1;
+                }
                 return 0;
             }
 
-            const distance = Math.abs(deltaPx);
-            const standardThreshold = slideWidth * 0.18;
-            const flickDistanceThreshold = Math.max(22, slideWidth * 0.06);
-            const isQuickFlick = durationMs > 0 && durationMs < 220 && distance > flickDistanceThreshold;
+            function updateCarousel(animate = true) {
+                applyTransform(0, animate);
 
-            if (distance > standardThreshold || isQuickFlick) {
-                return deltaPx > 0 ? -1 : 1;
-            }
-            return 0;
-        }
+                const indicators = indicatorsContainer.querySelectorAll('.carousel-indicator');
+                indicators.forEach((indicator, index) => {
+                    const isActive = index === currentSlide;
+                    indicator.classList.toggle('is-active', isActive);
+                    indicator.setAttribute('aria-current', isActive ? 'true' : 'false');
+                    indicator.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+                });
 
-        function updateCarousel() {
-            setCarouselTransform(0, true);
-            const indicators = indicatorsContainer.querySelectorAll('.carousel-indicator');
-            indicators.forEach((indicator, index) => {
-                indicator.classList.toggle('is-active', index === currentSlide);
-                indicator.setAttribute('aria-current', index === currentSlide ? 'true' : 'false');
-            });
-        }
-
-        function goToSlide(index) {
-            if (index < 0) {
-                currentSlide = carouselSlides.length - 1;
-            } else if (index >= carouselSlides.length) {
-                currentSlide = 0;
-            } else {
-                currentSlide = index;
-            }
-            updateCarousel();
-        }
-
-        carouselSlides.forEach((_, index) => {
-            const indicator = document.createElement('button');
-            indicator.type = 'button';
-            indicator.className = 'carousel-indicator';
-            indicator.setAttribute('aria-label', `Go to screenshot ${index + 1}`);
-            indicator.addEventListener('click', () => goToSlide(index));
-            indicatorsContainer.appendChild(indicator);
-        });
-
-        prevButton.addEventListener('click', () => goToSlide(currentSlide - 1));
-        nextButton.addEventListener('click', () => goToSlide(currentSlide + 1));
-
-        function beginMouseDrag(event) {
-            if (event.button !== 0) {
-                return;
-            }
-            isMouseDragging = true;
-            hasMouseDragged = false;
-            mouseDragStartX = event.clientX;
-            mouseDragDeltaX = 0;
-            mouseDragStartTime = Date.now();
-            carouselViewport.classList.add('is-dragging');
-            setCarouselTransform(0, false);
-        }
-
-        function continueMouseDrag(event) {
-            if (!isMouseDragging) {
-                return;
-            }
-            mouseDragDeltaX = event.clientX - mouseDragStartX;
-            if (Math.abs(mouseDragDeltaX) > 5) {
-                hasMouseDragged = true;
-            }
-            setCarouselTransform(mouseDragDeltaX, false);
-        }
-
-        function finishMouseDrag() {
-            if (!isMouseDragging) {
-                return;
-            }
-            isMouseDragging = false;
-            carouselViewport.classList.remove('is-dragging');
-
-            const dragDurationMs = Date.now() - mouseDragStartTime;
-            const direction = getDragSlideDirection(mouseDragDeltaX, dragDurationMs);
-            if (direction !== 0) {
-                goToSlide(currentSlide + direction);
-            } else {
-                updateCarousel();
+                slides.forEach((slide, index) => {
+                    const isVisible = index === currentSlide;
+                    slide.setAttribute('aria-hidden', isVisible ? 'false' : 'true');
+                });
             }
 
-            if (hasMouseDragged) {
-                suppressZoomClickUntil = Date.now() + 250;
+            function goToSlide(index, animate = true) {
+                if (index < 0) {
+                    currentSlide = slides.length - 1;
+                } else if (index >= slides.length) {
+                    currentSlide = 0;
+                } else {
+                    currentSlide = index;
+                }
+                updateCarousel(animate);
             }
-            mouseDragDeltaX = 0;
-        }
 
-        carouselViewport.addEventListener('mousedown', beginMouseDrag);
-        carouselViewport.addEventListener('dragstart', (event) => event.preventDefault());
-        window.addEventListener('mousemove', continueMouseDrag);
-        window.addEventListener('mouseup', finishMouseDrag);
-        window.addEventListener('mouseleave', finishMouseDrag);
-
-        carouselTrack.addEventListener('touchstart', (event) => {
-            touchStartX = event.changedTouches[0].screenX;
-            touchStartTime = Date.now();
-        }, { passive: true });
-
-        carouselTrack.addEventListener('touchend', (event) => {
-            touchEndX = event.changedTouches[0].screenX;
-            const swipeDistance = touchEndX - touchStartX;
-            const swipeDurationMs = Date.now() - touchStartTime;
-            const direction = getDragSlideDirection(swipeDistance, swipeDurationMs);
-            if (direction !== 0) {
-                goToSlide(currentSlide + direction);
-            }
-        }, { passive: true });
-
-        function openLightbox(imageSrc, imageAlt, captionText) {
-            lightboxImage.src = imageSrc;
-            lightboxImage.alt = imageAlt;
-            lightboxCaption.textContent = captionText;
-            lightbox.classList.add('is-open');
-            lightbox.setAttribute('aria-hidden', 'false');
-            document.body.classList.add('lightbox-open');
-        }
-
-        function closeLightbox() {
-            lightbox.classList.remove('is-open');
-            lightbox.setAttribute('aria-hidden', 'true');
-            document.body.classList.remove('lightbox-open');
-            lightboxImage.src = '';
-            lightboxImage.alt = '';
-        }
-
-        zoomTriggers.forEach((trigger) => {
-            trigger.addEventListener('click', (event) => {
-                if (Date.now() < suppressZoomClickUntil) {
-                    event.preventDefault();
+            function openLightbox(imageSrc, imageAlt, captionText, focusSource) {
+                if (!lightbox || !lightboxImage || !lightboxCaption || !lightboxClose) {
                     return;
                 }
-                const image = trigger.querySelector('img');
-                const caption = trigger.closest('.carousel-slide').querySelector('.screenshot-caption');
-                openLightbox(image.src, image.alt, caption ? caption.textContent : '');
-            });
-        });
-
-        lightboxClose.addEventListener('click', closeLightbox);
-
-        lightbox.addEventListener('click', () => {
-            closeLightbox();
-        });
-
-        window.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && lightbox.classList.contains('is-open')) {
-                closeLightbox();
+                lastFocusedElement = focusSource || document.activeElement;
+                lightboxImage.src = imageSrc;
+                lightboxImage.alt = imageAlt;
+                lightboxCaption.textContent = captionText;
+                lightbox.classList.add('is-open');
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('lightbox-open');
+                lightboxClose.focus({ preventScroll: true });
             }
-        });
 
-        updateCarousel();
+            function closeLightbox() {
+                if (!lightbox || !lightboxImage || !lightboxCaption) {
+                    return;
+                }
+                lightbox.classList.remove('is-open');
+                lightbox.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('lightbox-open');
+                lightboxImage.src = '';
+                lightboxImage.alt = '';
+                lightboxCaption.textContent = '';
+                if (lastFocusedElement instanceof HTMLElement) {
+                    lastFocusedElement.focus({ preventScroll: true });
+                }
+                lastFocusedElement = null;
+            }
 
-        async function loadSteamCommunityPosts() {
-            if (!steamPostsContainer) {
+            function trapDialogFocus(event) {
+                if (!lightbox || !lightbox.classList.contains('is-open') || event.key !== 'Tab') {
+                    return;
+                }
+                const focusable = Array.from(lightbox.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'));
+                if (!focusable.length) {
+                    return;
+                }
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+
+                if (event.shiftKey && document.activeElement === first) {
+                    event.preventDefault();
+                    last.focus();
+                } else if (!event.shiftKey && document.activeElement === last) {
+                    event.preventDefault();
+                    first.focus();
+                }
+            }
+
+            slides.forEach((slide, index) => {
+                const slideId = `screenshot-slide-${index + 1}`;
+                slide.id = slideId;
+                slide.setAttribute('role', 'group');
+                slide.setAttribute('aria-label', `Screenshot ${index + 1} of ${slides.length}`);
+                slide.setAttribute('aria-hidden', index === 0 ? 'false' : 'true');
+
+                const indicator = document.createElement('button');
+                indicator.type = 'button';
+                indicator.className = 'carousel-indicator';
+                indicator.setAttribute('aria-label', `Go to screenshot ${index + 1}`);
+                indicator.setAttribute('aria-controls', slideId);
+                indicator.addEventListener('click', () => goToSlide(index));
+                indicatorsContainer.appendChild(indicator);
+            });
+
+            zoomTriggers.forEach((trigger) => {
+                const slide = trigger.closest('.carousel-slide');
+                const captionElement = slide ? slide.querySelector('.screenshot-caption') : null;
+                const captionText = captionElement ? captionElement.textContent.trim() : 'Screenshot';
+                trigger.setAttribute('aria-label', `Open enlarged image: ${captionText}`);
+
+                trigger.addEventListener('click', (event) => {
+                    if (performance.now() < suppressZoomClickUntil) {
+                        event.preventDefault();
+                        return;
+                    }
+                    const image = trigger.querySelector('img');
+                    if (!image) {
+                        return;
+                    }
+                    openLightbox(image.currentSrc || image.src, image.alt || captionText, captionText, trigger);
+                });
+            });
+
+            prevButton.addEventListener('click', () => goToSlide(currentSlide - 1));
+            nextButton.addEventListener('click', () => goToSlide(currentSlide + 1));
+
+            function onPointerDown(event) {
+                if (event.pointerType === 'mouse' && event.button !== 0) {
+                    return;
+                }
+                if (event.pointerType === 'mouse' && event.cancelable) {
+                    event.preventDefault();
+                }
+                isPointerDragging = true;
+                hasPointerDragged = false;
+                pointerStartX = event.clientX;
+                pointerDeltaX = 0;
+                pointerStartTime = performance.now();
+                carouselViewport.classList.add('is-dragging');
+                applyTransform(0, false);
+                if (typeof carouselViewport.setPointerCapture === 'function') {
+                    carouselViewport.setPointerCapture(event.pointerId);
+                }
+            }
+
+            function onPointerMove(event) {
+                if (!isPointerDragging) {
+                    return;
+                }
+                pointerDeltaX = event.clientX - pointerStartX;
+                if (Math.abs(pointerDeltaX) > 5) {
+                    hasPointerDragged = true;
+                }
+                applyTransform(pointerDeltaX, false);
+            }
+
+            function onPointerEnd(event) {
+                if (!isPointerDragging) {
+                    return;
+                }
+                isPointerDragging = false;
+                carouselViewport.classList.remove('is-dragging');
+                if (typeof carouselViewport.releasePointerCapture === 'function') {
+                    carouselViewport.releasePointerCapture(event.pointerId);
+                }
+
+                const dragDurationMs = performance.now() - pointerStartTime;
+                const direction = getDragDirection(pointerDeltaX, dragDurationMs);
+                if (direction !== 0) {
+                    goToSlide(currentSlide + direction);
+                } else {
+                    updateCarousel();
+                }
+
+                if (hasPointerDragged) {
+                    suppressZoomClickUntil = performance.now() + 260;
+                }
+                pointerDeltaX = 0;
+            }
+
+            carouselViewport.addEventListener('dragstart', (event) => event.preventDefault());
+            carouselViewport.addEventListener('pointerdown', onPointerDown);
+            carouselViewport.addEventListener('pointermove', onPointerMove);
+            carouselViewport.addEventListener('pointerup', onPointerEnd);
+            carouselViewport.addEventListener('pointercancel', onPointerEnd);
+            carouselViewport.addEventListener('pointerleave', onPointerEnd);
+            carouselViewport.addEventListener('keydown', (event) => {
+                if (event.key === 'ArrowLeft') {
+                    event.preventDefault();
+                    goToSlide(currentSlide - 1);
+                } else if (event.key === 'ArrowRight') {
+                    event.preventDefault();
+                    goToSlide(currentSlide + 1);
+                } else if (event.key === 'Home') {
+                    event.preventDefault();
+                    goToSlide(0);
+                } else if (event.key === 'End') {
+                    event.preventDefault();
+                    goToSlide(slides.length - 1);
+                }
+            });
+
+            if (lightbox && lightboxClose) {
+                lightboxClose.addEventListener('click', closeLightbox);
+                lightbox.addEventListener('click', (event) => {
+                    if (event.target === lightbox) {
+                        closeLightbox();
+                    }
+                });
+                lightbox.addEventListener('keydown', trapDialogFocus);
+            }
+
+            document.addEventListener('keydown', (event) => {
+                if (!lightbox || !lightbox.classList.contains('is-open')) {
+                    return;
+                }
+                if (event.key === 'Escape') {
+                    closeLightbox();
+                }
+            });
+
+            window.addEventListener('resize', () => updateCarousel(false), { passive: true });
+            updateCarousel(false);
+        }
+
+        function initializeSteamCommunityPosts() {
+            const steamPostsContainer = document.getElementById('steam-community-posts');
+            const steamSection = document.getElementById('steam-community-updates');
+            if (!steamPostsContainer || !steamSection) {
                 return;
             }
 
@@ -532,11 +750,18 @@
             const steamCommunityUrl = 'https://steamcommunity.com/app/3851590/';
             const allOriginsJsonUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(steamRssUrl)}`;
             const rssToJsonUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(steamRssUrl)}`;
-            const steamPostsCacheKey = 'harwell-steam-posts-cache-v1';
+            const steamPostsCacheKey = 'harwell-steam-posts-cache-v2';
             const steamPostsCacheMaxAgeMs = 30 * 60 * 1000;
+
+            let hasLoaded = false;
+
+            function setBusyState(isBusy) {
+                steamPostsContainer.setAttribute('aria-busy', isBusy ? 'true' : 'false');
+            }
 
             function setSteamStatus(message) {
                 steamPostsContainer.innerHTML = '';
+                setBusyState(false);
                 const status = document.createElement('p');
                 status.className = 'steam-community-status text-gh-text-secondary';
                 status.textContent = message;
@@ -554,6 +779,38 @@
                     .trim();
             }
 
+            function toSafePostUrl(url) {
+                try {
+                    const parsed = new URL(url || steamCommunityUrl, steamCommunityUrl);
+                    if (parsed.protocol === 'http:' || parsed.protocol === 'https:') {
+                        return parsed.toString();
+                    }
+                    return steamCommunityUrl;
+                } catch (error) {
+                    return steamCommunityUrl;
+                }
+            }
+
+            function formatPostDate(value) {
+                const parsed = new Date(value);
+                if (Number.isNaN(parsed.getTime())) {
+                    return cleanSteamText(value);
+                }
+                return new Intl.DateTimeFormat(undefined, { dateStyle: 'medium' }).format(parsed);
+            }
+
+            function normalizePost(rawPost) {
+                const title = cleanSteamText(rawPost.title || 'Steam Community Update');
+                const excerptRaw = cleanSteamText(rawPost.excerpt || rawPost.description || '');
+                const excerpt = excerptRaw.length > 280 ? `${excerptRaw.slice(0, 277)}...` : excerptRaw;
+                return {
+                    title: title || 'Steam Community Update',
+                    date: formatPostDate(rawPost.date || rawPost.pubDate || ''),
+                    excerpt: excerpt || 'Read the full post on Steam Community.',
+                    url: toSafePostUrl(rawPost.url || rawPost.link)
+                };
+            }
+
             function renderPosts(posts) {
                 if (!posts.length) {
                     setSteamStatus('No posts are available right now. Check Steam Community for the latest updates.');
@@ -561,26 +818,29 @@
                 }
 
                 steamPostsContainer.innerHTML = '';
+                setBusyState(false);
 
-                posts.forEach((post) => {
+                posts.forEach((post, index) => {
                     const article = document.createElement('article');
                     article.className = 'steam-post-card section-background';
+                    article.setAttribute('data-reveal', '');
+                    article.style.setProperty('--reveal-delay', `${80 + (index * 60)}ms`);
 
                     const title = document.createElement('h3');
                     title.className = 'steam-post-title text-gh-text-primary';
-                    title.textContent = post.title || 'Steam Community Update';
+                    title.textContent = post.title;
 
                     const meta = document.createElement('p');
                     meta.className = 'steam-post-meta text-gh-text-secondary';
-                    meta.textContent = post.date || '';
+                    meta.textContent = post.date;
 
                     const excerpt = document.createElement('p');
                     excerpt.className = 'steam-post-excerpt text-gh-text-secondary';
-                    excerpt.textContent = post.excerpt || 'Read the full post on Steam Community.';
+                    excerpt.textContent = post.excerpt;
 
                     const link = document.createElement('a');
                     link.className = 'steam-post-link';
-                    link.href = post.url || steamCommunityUrl;
+                    link.href = post.url;
                     link.target = '_blank';
                     link.rel = 'noopener noreferrer';
                     link.textContent = 'Read on Steam';
@@ -591,68 +851,8 @@
                     article.appendChild(link);
                     steamPostsContainer.appendChild(article);
                 });
-            }
 
-            function renderSkeletonPosts(count) {
-                steamPostsContainer.innerHTML = '';
-                for (let i = 0; i < count; i++) {
-                    const article = document.createElement('article');
-                    article.className = 'steam-post-card steam-post-skeleton section-background';
-                    article.setAttribute('aria-hidden', 'true');
-                    article.innerHTML = `
-                        <div class="steam-skeleton-line steam-skeleton-title"></div>
-                        <div class="steam-skeleton-line steam-skeleton-meta"></div>
-                        <div class="steam-skeleton-line"></div>
-                        <div class="steam-skeleton-line"></div>
-                        <div class="steam-skeleton-line steam-skeleton-short"></div>
-                        <div class="steam-skeleton-link"></div>
-                    `;
-                    steamPostsContainer.appendChild(article);
-                }
-            }
-
-            function parseRssXml(xmlText) {
-                const parser = new DOMParser();
-                const rssDoc = parser.parseFromString(xmlText, 'application/xml');
-                if (rssDoc.querySelector('parsererror')) {
-                    throw new Error('Could not parse RSS feed');
-                }
-                const items = Array.from(rssDoc.querySelectorAll('item')).slice(0, 3);
-                return items.map((item) => ({
-                    title: cleanSteamText(item.querySelector('title') ? item.querySelector('title').textContent : ''),
-                    date: cleanSteamText(item.querySelector('pubDate') ? item.querySelector('pubDate').textContent : ''),
-                    excerpt: cleanSteamText(item.querySelector('description') ? item.querySelector('description').textContent : ''),
-                    url: item.querySelector('link') ? item.querySelector('link').textContent : steamCommunityUrl
-                }));
-            }
-
-            async function getPostsFromAllOrigins() {
-                const response = await fetch(allOriginsJsonUrl, { method: 'GET' });
-                if (!response.ok) {
-                    throw new Error(`allOrigins request failed with ${response.status}`);
-                }
-                const payload = await response.json();
-                if (!payload || !payload.contents) {
-                    throw new Error('allOrigins returned no RSS contents');
-                }
-                return parseRssXml(payload.contents);
-            }
-
-            async function getPostsFromRss2Json() {
-                const response = await fetch(rssToJsonUrl, { method: 'GET' });
-                if (!response.ok) {
-                    throw new Error(`rss2json request failed with ${response.status}`);
-                }
-                const payload = await response.json();
-                if (!payload || !Array.isArray(payload.items)) {
-                    throw new Error('rss2json returned invalid items');
-                }
-                return payload.items.slice(0, 3).map((item) => ({
-                    title: cleanSteamText(item.title || ''),
-                    date: cleanSteamText(item.pubDate || ''),
-                    excerpt: cleanSteamText(item.description || ''),
-                    url: item.link || steamCommunityUrl
-                }));
+                initializeRevealAnimations();
             }
 
             function getCachedPosts() {
@@ -683,6 +883,60 @@
                 }
             }
 
+            async function fetchJsonWithTimeout(url, timeoutMs) {
+                const controller = new AbortController();
+                const timeoutId = window.setTimeout(() => controller.abort(), timeoutMs);
+                try {
+                    const response = await fetch(url, {
+                        method: 'GET',
+                        signal: controller.signal,
+                        cache: 'no-store'
+                    });
+                    if (!response.ok) {
+                        throw new Error(`Request failed: ${response.status}`);
+                    }
+                    return response.json();
+                } finally {
+                    window.clearTimeout(timeoutId);
+                }
+            }
+
+            function parseRssXml(xmlText) {
+                const parser = new DOMParser();
+                const rssDoc = parser.parseFromString(xmlText, 'application/xml');
+                if (rssDoc.querySelector('parsererror')) {
+                    throw new Error('Could not parse RSS feed');
+                }
+                const items = Array.from(rssDoc.querySelectorAll('item')).slice(0, 3);
+                return items.map((item) => normalizePost({
+                    title: item.querySelector('title') ? item.querySelector('title').textContent : '',
+                    date: item.querySelector('pubDate') ? item.querySelector('pubDate').textContent : '',
+                    excerpt: item.querySelector('description') ? item.querySelector('description').textContent : '',
+                    url: item.querySelector('link') ? item.querySelector('link').textContent : steamCommunityUrl
+                }));
+            }
+
+            async function getPostsFromAllOrigins() {
+                const payload = await fetchJsonWithTimeout(allOriginsJsonUrl, 7000);
+                if (!payload || !payload.contents) {
+                    throw new Error('allOrigins returned no RSS contents');
+                }
+                return parseRssXml(payload.contents);
+            }
+
+            async function getPostsFromRss2Json() {
+                const payload = await fetchJsonWithTimeout(rssToJsonUrl, 7000);
+                if (!payload || !Array.isArray(payload.items)) {
+                    throw new Error('rss2json returned invalid items');
+                }
+                return payload.items.slice(0, 3).map((item) => normalizePost({
+                    title: item.title,
+                    date: item.pubDate,
+                    excerpt: item.description,
+                    url: item.link
+                }));
+            }
+
             async function getFirstAvailablePosts() {
                 const attempts = [getPostsFromRss2Json(), getPostsFromAllOrigins()];
                 const results = await Promise.allSettled(attempts);
@@ -693,32 +947,49 @@
                 return successful.value;
             }
 
-            const cachedPosts = getCachedPosts();
-            if (cachedPosts && cachedPosts.length) {
-                renderPosts(cachedPosts);
-            } else {
-                renderSkeletonPosts(3);
-            }
+            async function loadPosts() {
+                if (hasLoaded) {
+                    return;
+                }
+                hasLoaded = true;
 
-            // Steam RSS is not CORS-enabled, so static hosting needs browser-safe proxy sources.
-            try {
-                const posts = await getFirstAvailablePosts();
-                saveCachedPosts(posts);
-                renderPosts(posts);
-            } catch (fetchError) {
-                if (!cachedPosts || !cachedPosts.length) {
-                    setSteamStatus('Unable to load Steam posts right now. Please check the Steam Community page directly.');
+                const cachedPosts = getCachedPosts();
+                if (cachedPosts && cachedPosts.length) {
+                    renderPosts(cachedPosts);
+                } else {
+                    setBusyState(true);
+                }
+
+                if (navigator.connection && navigator.connection.saveData && cachedPosts && cachedPosts.length) {
+                    return;
+                }
+
+                try {
+                    const posts = await getFirstAvailablePosts();
+                    saveCachedPosts(posts);
+                    renderPosts(posts);
+                } catch (error) {
+                    if (!cachedPosts || !cachedPosts.length) {
+                        setSteamStatus('Unable to load Steam posts right now. Please check the Steam Community page directly.');
+                    }
                 }
             }
+
+            if ('IntersectionObserver' in window) {
+                const steamObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            observer.unobserve(entry.target);
+                            loadPosts();
+                        }
+                    });
+                }, { rootMargin: '0px 0px 240px 0px', threshold: 0.05 });
+                steamObserver.observe(steamSection);
+            } else {
+                loadPosts();
+            }
         }
-
-        loadSteamCommunityPosts();
-
-        // Initial setup
-        setCanvasSize();
-        initStars();
-        animateStars();
-    };
+    }());
 </script>
 </body>
 </html>

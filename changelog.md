@@ -1,9 +1,11 @@
-- Added a game credits section for the developer and publisher logo
-- Replaced the static screenshots grid with a carousel, indicators, drag/swipe navigation, and lightbox zoom
-- Added a Latest Steam Community Posts section with loading skeleton cards and community links
-- Updated Steam/social links and the footer year to 2026
-- Expanded CSS for credits, carousel, lightbox, Steam posts, and responsive layout updates
-- Moved core media into assets/ and fonts/ folders
-- Replaced old screenshots/media with 7 new .webp screenshots (SCR 1 to SCR 7)
-- Removed legacy root-level media and outdated GIF/WebP screenshots
-- Added an empty .codex file
+- Added SEO and social metadata to the homepage
+- Added VideoGame JSON-LD structured data
+- Added canonical/preload/preconnect and DNS prefetch optimizations
+- Improved accessibility with skip link, main landmark, ARIA updates, and focus-visible styles
+- Added safe external link attributes for new-tab links
+- Added width/height/lazy/decode image performance attributes
+- Improved UI interactions, animation timing, reveal effects, and reduced-motion handling
+- Improved screenshot carousel responsiveness and touch behavior
+- Refactored Steam posts loading with timeouts, normalization, lazy loading, and better fallback states
+- Added robots.txt
+- Added sitemap.xml
